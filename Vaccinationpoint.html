@@ -1,0 +1,170 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vaccination Point</title>
+    <link rel="stylesheet" href="Vaccinationpoint.css">
+</head>
+
+<body>
+    <div class="container">
+        <h5 style="text-align: right;">Search vaccination center</h5>
+        <div id="search_icon">
+            <!-- <form action=""> -->
+            <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+            <input type="text" id="search" onkeyup="search()" class="search" placeholder="Search..." name="search">
+            <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
+        <!-- </form> -->
+        </div><br> <br>
+    <h1 style="text-align: center;">Vaccination Center</h1>
+    <div class="table">
+        <table border="1" id="myTable">
+            <tr>
+                <th>Sn.</th>
+                <th>Centers Designated</th>
+                <th>Address</th>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>Bir Hospital </td>
+                <td>Ratna Park</td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>TU Teaching Hospital </td>
+                <td>Maharajgunj</td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>Civil Services Hospital </td>
+                <td>Baneshwor</td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>Sukraraj Tropical & Infectious Disease Hospital</td>
+                <td>Teku</td>
+            </tr>
+            <tr>
+                <td>5.</td>
+                <td>Paropakar Maternity and Women's Hospital</td>
+                <td>Thapathali</td>
+            </tr>
+            <tr>
+                <td>6.</td>
+                <td>Kathmandu Medical College</td>
+                <td> Sinamangal</td>
+            </tr>
+            <tr>
+                <td>7.</td>
+                <td>Nepal Police Hospital</td>
+                <td>Lagimpat</td>
+            </tr>
+            <tr>
+                <td>8.</td>
+                <td>Birendra Military Hospital</td>
+                <td>Chhauni</td>
+            </tr>
+            <tr>
+                <td>9.</td>
+                <td>People's Dental and Genera Hospital</td>
+                <td>Sorhakhutte</td>
+            </tr>
+            <tr>
+                <td>10.</td>
+                <td>Himal Hospital</td>
+                <td>Gyaneshwor</td>
+            </tr>
+            <tr>
+                <td>11.</td>
+                <td>Om Hospital and Research Centre</td>
+                <td>Chabahil</td>
+            </tr>
+            <tr>
+                <td>12.</td>
+                <td>Chettrapati Free Clinic</td>
+                <td>Chettrapati</td>
+            </tr>
+            <tr>
+                <td>13.</td>
+                <td>Janamaitri Hospital</td>
+                <td>Balaju</td>
+            </tr>
+            <tr>
+                <td>14.</td>
+                <td>Manmohan Hospita</td>
+                <td>Swoyambhu</td>
+            </tr>
+            <tr>
+                <td>15.</td>
+                <td>Kathmandu Model Hospital</td>
+                <td>Exhibition Road</td>
+            </tr>
+            <tr>
+                <td>16.</td>
+                <td>Hams Hospital and Research Centre</td>
+                <td>Dhumbarahi</td>
+            </tr>
+            <tr>
+                <td>17.</td>
+                <td>Sahid Gangalal Hospital</td>
+                <td>Bansbari</td>
+            </tr>
+            <tr>
+                <td>18.</td>
+                <td>National Hospital</td>
+                <td>Kalanki</td>
+            </tr>
+            <tr>
+                <td>19.</td>
+                <td>Ramghat Primary Health Centre</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>20.</td>
+                <td>Kantipur Hospital</td>
+                <td>Tinkune</td>
+            </tr>
+            <tr>
+                <td>21.</td>
+                <td>Radha Swami Isolation Centre</td>
+                <td>Samakhushi</td>
+            </tr>
+            <tr>
+                <td>22.</td>
+                <td>Stupa Hospital</td>
+                <td>Baudhha</td>
+                
+            </tr>
+        </table>
+    </div>
+</div>
+    
+    <script>
+            const search = () => {
+            let filter = document.getElementById('search').value.toUpperCase();
+            let myTable = document.getElementById('myTable');
+            let tr = myTable.getElementsByTagName('tr');
+            let ser =document.getElementById('search');
+            for (var i = 0; i < tr.length; i++) {
+                let td = tr[i].getElementsByTagName('td')[1];
+                if (td) {
+                    let textvalue = td.textContent || td.innerHTML;
+                    let text = ser.textContent || ser.innerHTML;
+                    if (text.toUpperCase().indexOf(filter) == "") {
+                    tr[i].style.background = "";
+                }
+                else if (textvalue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.background = "lightblue";
+                    }
+                    else if(text.toUpperCase().indexOf(filter) == -1){
+                    tr[i].style.background = "";
+                }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

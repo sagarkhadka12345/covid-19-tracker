@@ -1,0 +1,156 @@
+*{
+    color: rgb(184, 184, 189);
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(245, 239, 239);
+  background:url('l_b.jpg');
+  background-repeat:no-repeat;
+  background-size: cover;
+}
+.login-box{
+    background-color: black;
+    opacity: .9;
+    color:white;
+    margin:3% 0px;
+    padding:0px 3%;
+    font-size:24px;
+}
+.email , .password{
+    border: none;
+    background: none;
+    color:white;
+    outline: none;
+    margin-left:3px;
+    
+
+}
+#email, #password{
+    border: solid 1px white;
+    border-radius: 3px;
+    padding: 3px;
+    color:white;
+}
+
+.submit{
+     border-radius: 10px;
+     height:2rem;
+     width:7rem;
+     background-color:rgb(12, 146, 12);
+     color:white;
+}
+.submit:hover{
+    cursor: pointer;
+    background-color: rgb(1, 173, 1);
+}
+.forget{
+    text-align: center;
+}
+/* .forget a{
+    
+   
+} */
+.forget a:hover{
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer; 
+}
+.inputLine{
+    display: flex;
+    justify-content: center;
+}
+.left-line, .right-line{
+    border-bottom: solid 1pxligh ;
+    
+}
+.create-p{
+    text-decoration: underline;
+
+}
+h4{
+    text-align: center;
+    margin: auto;
+    position: relative;
+}
+h4::before{
+    content: "";
+    height: 1px;
+    width: 40%;
+    display: block;
+    position: absolute;
+    background:white;
+    top: 50%;
+    left: 0;
+}
+h4::after{
+    content: "";
+    height: 1px;
+    width: 40%;
+    display: block;
+    position: absolute;
+    background: white;
+    top: 50%;
+    right: 0;
+}
+.reg{
+    display: flex;
+    width: 100%;
+}
+.reg2{
+    margin-left: 100px;
+}
+.reg a{
+    text-decoration: none;
+}
+
+.reg a:hover{
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer; 
+}
+
+@media(max-width:768px){
+    body{
+        padding-bottom: 118px;
+        padding-top: 110px;
+    }
+}
+@media(max-width:400px){
+    body{
+        padding-bottom: 30px;
+        padding-top: 30px;
+    }
+}
+@media(width:1024px){
+    body{
+        padding: 400px 0px;
+    }
+}
+
+@media(width:768px){
+    body{
+        padding-bottom: 230px;
+        padding-top: 200px;
+    }
+}
+@media(height:812px){
+    body{
+        /* margin: 0px; */
+        padding-bottom: 120px;
+        padding-top: 110px;
+    }
+}
+@media(height:600px){
+    body{
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+}
+@media(height:800px){
+    body{
+        padding-bottom: 0px;
+        padding-top: 65px;
+    }
+}

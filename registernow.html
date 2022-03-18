@@ -1,0 +1,76 @@
+<html>
+
+<head>
+  <title>Register Now</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<link rel="stylesheet" href="registernow.css">
+
+<body>
+  <div class="container">
+        <form action="">
+        <h1>Covid-19 Vaccine Registration Form</h1>
+        <hr><br><br>
+        <b><label> Name </label> </b> <br>
+        <input type="text" id="name" name="firstname" placeholder="Firstname" size="5" required />
+        <input type="text" id="name1" name="middlename" placeholder="Middlename" size="5" required />
+        <input type="text" id="name2" name="lastname" placeholder="Lastname" size="5" required /><br>
+        <b><label><br>
+            Phone :
+          </label> </b><br>
+        <input type="text" name="country code" placeholder="Country Code" value="+977" size="2" /><br>
+        <input type="text" name="phone" placeholder="Tel no." size="10" required> <br>
+        <b>Current Address : </b><br>
+        <input type="text" name="phone" placeholder="Current Address" size="10" required> <br>
+        <b><label>
+            Gender :
+          </label></b><br>
+        <input type="radio" value="Male" name="gender"> Male
+        <input type="radio" value="Female" name="gender"> Female
+        <input type="radio" value="Other" name="gender"> Other
+        <br><br>
+        <label for="email"><b>Email</b></label><br>
+        <input type="text" placeholder="Enter Email" name="email" required><br>
+        <label for="email"><b>Password</b></label><br>
+        <input type="password" style="width:80%;" placeholder="Enter your password" required><br>
+        <div>
+          <label>
+            <b>Idenety Type :</b>
+          </label>
+          <select>
+            <option>Id Card</option>
+            <option>Passport</option>
+            <option>Citizenship</option>
+            <option>Lincense</option>
+          </select><br><br>
+          
+            <b><label for="myfile">Select files:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label></b>
+            <input type="file" id="myfile" name="myfile" multiple><br><br>
+          
+        </div>
+        <div>
+          <b><label>Medical Condition</label></b><br>
+  
+          <input type="checkbox"> Normal Health Condition
+          <input type="checkbox"> Blood Pressure (High/low) <br>
+          <input type="checkbox"> Cancer 
+          <input type="checkbox"> Cardo related diseases 
+          <input type="checkbox"> Diabetes
+          <input type="checkbox"> Others
+        </div><br>
+        <div>
+          <b><label>Disability</label></b><br>
+          <input type="radio" value="Yes" name="disability"> Yes
+          <input type="radio" value="No" name="disability"> No
+        </div>
+        <div>
+          <input type="checkbox" name="" id="" required> All the above mentioned details are correct.Please apply
+        </div><br><br>
+        <div>
+          <input type="submit" value="Submit" id="sub" onclick="alert('Register succesfull');window.location.href='covid-19.html'">
+        </div>
+      </form>
+      </div>
+</body>
+
+</html>

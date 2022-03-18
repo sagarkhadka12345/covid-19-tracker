@@ -1,0 +1,33 @@
+#h2{
+    text-align: center;
+}
+
+.symptom{
+    /* background: lightgray; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(340px,1fr));
+    grid-column-gap: 3pc;
+    margin: auto;
+    height: 300px;
+    overflow-x: scroll;
+    width: 100vw;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    gap: 1rem;
+}
+.p{
+    margin-left: 2rem;
+}
+
+.img{
+    margin-left: 2rem;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.symptoms{
+    height: 150px;
+    display: flex;
+    align-items: center;
+    background: whitesmoke;
+}

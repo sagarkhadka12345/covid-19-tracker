@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bed Availability</title>
+    <link rel="stylesheet" href="BED.css">
+</head>
+<body>
+    <div class="container">
+        <h5 style="text-align: right;">Search Health Institution</h5>
+        <div id="search_icon">
+            <!-- <form action=""> -->
+            <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+            <input type="text" id="search" onkeyup="search()" class="search" placeholder="Search..." name="search">
+            <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
+        <!-- </form> -->
+        </div><br> <br>
+        <h2 style="text-align: center;">The Bed Availability of certain Hospitals</h2>
+        <table id="myTable" border="1" cellspacing="3" cellpadding="2" class="center">
+        <tr>
+            <th>S.N</th>
+            <th>Name Of Health Institution</th>
+            <th>General Bed/</th>
+            <th>ICU</th>
+            <th>Ventilator</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>Aamda Hospital , Butwal</td>
+            <td>20</td>
+            <td>5</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Aamda Hospital , Damak</td>
+            <td>20</td>
+            <td>6</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Advanced Hospital , Damak</td>
+            <td>7</td>
+            <td>3</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <td>Arghakhanchi Hospital</td>
+            <td>25</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>5.</td>
+            <td>Armed Police Force Hospital, Balambu</td>
+            <td>180</td>
+            <td>20</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>6.</td>
+            <td>B & C Hospital , Birtamod</td>
+            <td>12</td>
+            <td>50</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>7.</td>
+            <td>B.P. Koirala Swasthya Bigyan Prathisthan</td>
+            <td>25</td>
+            <td>15</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>8.</td>
+            <td>Bandipur Hospital</td>
+            <td>15</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>9.</td>
+            <td>Bardibas Hospital Mahottari</td>
+            <td>19</td>
+            <td>9</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>10.</td>
+            <td>Bardiya Hospital</td>
+            <td>17</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>11.</td>
+            <td>Beljhundi Corona Bishesh Hospital</td>
+            <td>75</td>
+            <td>15</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>12.</td>
+            <td>Beltar Covid Hospital</td>
+            <td>5</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>13.</td>
+            <td>Beni Hospital , Myagdi</td>
+            <td>37</td>
+            <td>5</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>14.</td>
+            <td>Bhaktapur Hospital, Bhaktapur</td>
+            <td>31</td>
+            <td>6</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>15.</td>
+            <td>Bheri Hospital</td>
+            <td>142</td>
+            <td>17</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>16.</td>
+            <td>Bhim Hospital</td>
+            <td>66</td>
+            <td>5</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>17.</td>
+            <td>Bijayapur hospital</td>
+            <td>4</td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>18.</td>
+            <td>Bir Hospital, Maha Baudha</td>
+            <td>172</td>
+            <td>59</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>19.</td>
+            <td>Birat Medical College And Teaching Hospital , Biratnagar</td>
+            <td>33</td>
+            <td>23</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>20.</td>
+            <td>Birtacity Hospital , Birtamod</td>
+            <td>20</td>
+            <td>12</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>21.</td>
+            <td>Charak Memorial , Kaski</td>
+            <td>11</td>
+            <td>4</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>22.</td>
+            <td>Chaurjahari Hospital Rukum</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>23.</td>
+            <td>Chhathari Hospital</td>
+            <td>6</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>24.</td>
+            <td>Civil Service Hospital, Kathmandu</td>
+            <td>35</td>
+            <td>13</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>25.</td>
+            <td>Crimson Hospital</td>
+            <td>20</td>
+            <td>5</td>
+            <td>2</td>
+        </tr>
+        
+        <tr>
+            <td>30.</td>
+            <td>Damak Hospital</td>
+            <td>6</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>31.</td>
+            <td>Damauli Hospital,Tanahun</td>
+            <td>25</td>
+            <td>7</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>32.</td>
+            <td>DevDaha Medical College</td>
+            <td>19</td>
+            <td>6</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>33.</td>
+            <td>Dhaulagiri Hospital , Baglung</td>
+            <td>46</td>
+            <td>4</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>34.</td>
+            <td>Dhulikhel Hospital</td>
+            <td>4</td>
+            <td>11</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>35.</td>
+            <td>Dirghayau Hospital</td>
+            <td>8</td>
+            <td>6</td>
+            <td>2</td>
+        </tr>
+    </table>
+</div>
+
+
+<script>
+           const search = () => {
+            let filter = document.getElementById('search').value.toUpperCase();
+            let myTable = document.getElementById('myTable');
+            let tr = myTable.getElementsByTagName('tr');
+            let ser =document.getElementById('search');
+            for (var i = 0; i < tr.length; i++) {
+                let td = tr[i].getElementsByTagName('td')[1];
+                if (td) {
+                    let textvalue = td.textContent || td.innerHTML;
+                    let text = ser.textContent || ser.innerHTML;
+                    if (text.toUpperCase().indexOf(filter) == "") {
+                    tr[i].style.background = "";
+                }
+                else if (textvalue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.background = "lightblue";
+                    }
+                    else if(text.toUpperCase().indexOf(filter) == -1){
+                    tr[i].style.background = "";
+                }
+                }
+            }
+        }
+</script>
+</body>
+</html>

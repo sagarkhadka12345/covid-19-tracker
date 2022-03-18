@@ -1,0 +1,60 @@
+<html>
+
+<head>
+  <title>Register Now</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<link rel="stylesheet" href="pcrlogin.css">
+
+<body>
+    <form action="">
+      <div class="container">
+        <h1> PCR Registration Form</h1>
+        <hr><br><br>
+        <b><label> Name </label> </b> <br>
+        <input type="text" id="name" name="firstname" placeholder="Firstname" size="5" required />
+        <input type="text" id="name1" name="middlename" placeholder="Middlename" size="5" required />
+        <input type="text" id="name2" name="lastname" placeholder="Lastname" size="5" required /><br>
+        <b><label>
+            Gender :
+          </label></b><br>
+        <input type="radio" value="Male" name="gender"> Male
+        <input type="radio" value="Female" name="gender"> Female
+        <input type="radio" value="Other" name="gender"> Other
+        <br><br>
+        <b><label><br>
+            Mobile no. :
+          </label> </b><br>
+        <input type="text" name="country code" placeholder="Country Code" value="+977" size="2" /><br>
+        <b>Current Address : </b><br>
+        <input type="text" name="phone" placeholder="Current Address" size="10" required> <br>
+        <label for="email"><b>Email</b></label><br>
+        <input type="text" placeholder="Enter Email" name="email" required><br>
+        <label for="email"><b>Nationality</b></label><br>
+        <input type="password" style="width:80%;" placeholder="Nationality" required><br>
+        <div>
+          <label>
+            <b>Why are you taking the test ?</b>
+          </label><br>
+          <select>
+            <option>Select</option>
+            <option>Symptoms</option>
+            <option>Travel</option>
+            <option>Education or Business</option>
+          </select><br><br>
+          
+            <b><label for="myfile">Select appoitment Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label></b><br>
+            <input type="date" id="" name="date" multiple><br><br>
+            <b><label for="myfile">Upload(passport,citizenship)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label></b>
+            <input type="file" id="myfile" name="myfile" multiple><br><br>
+            
+        </div>
+        <div>
+          <input type="submit" value="Register" id="btn"
+                        onclick="alert('Register succesfull');window.location.href='covid-19.html'">
+        </div>
+      </div>
+    </form>
+</body>
+
+</html>

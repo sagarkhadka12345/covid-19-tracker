@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CovidInfo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/dddee3edb5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-fluid  bg-dark" style="padding:0px;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light"
+            style="position: fixed;width:100%;border:2px solid black;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Covid Info</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+
+                        <a class="nav-link active mx-3" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                aria-expanded="false">Vaccine Guide</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Vaccinationpoint.html">Vaccination Point</a></li>
+                                <li><a class="dropdown-item" href="bed.html">Bed Availability</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link mx-3" href="contact.html">contact</a>
+                        </li>
+                        <li class="nav-item bg-danger" id="log">
+                            <a class="nav-link mx-3 " href="covid-19.html">login/register</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid bg-light" id="home">
+            <div class="stats">
+                <div class="latest-report">
+                  <div class="country">
+                    <div class="name">Loading...</div>
+                    <div class="change-country">change</div>
+                    <div class="search-country hide">
+                      <div class="search-box">
+                        <input
+                          type="text"
+                          id="search-input"
+                          placeholder="Search Country..."
+                        />
+                        <img class="close" src="./resources/img/close.svg" alt="" />
+                      </div>
+                      <div class="country-list"></div>
+                    </div>
+                  </div>
+                  <div class="total-cases">
+                    <div class="title">Total Cases</div>
+                    <div class="value" id="totalvalue">0</div>
+                    <div class="new-value"  >+0</div>
+                  </div>
+                  <div class="recovered">
+                    <div class="title">Recovered</div>
+                    <div class="value" id ="recval">0</div>
+                    <div class="new-value" >+0</div>
+                  </div>
+                  <div class="deaths">
+                    <div class="title">Deaths</div>
+                    <div class="value" id="totaldeath">0</div>
+                    <div class="new-value" >+0</div>
+                  </div>
+                </div>
+                <div class="chart">
+                  <canvas id="axes_line_chart"></canvas>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div>
+
+      <div class="container-fluid bg-light" id="case1">
+        <h1 >Last 24 hrs update</h1>
+<div class="fl">
+        <div id="act"><span><img src="covid.png" alt="sad" width="50px" height="50px"></span><h3><span id="dailycase" >0</span> new cases</h3></div>
+        <div id="die"><span><img src="sady.png" alt="sad" width="50px" height="50px"></span><h3><span id="dailydeath" ></span></span> death case</h3></div>
+        <div id="rec"><span><img src="smiley.png" alt="sad" width="50px" height="50px"></span><h3><span id="dailyrecovered" ></span> recovered</h3></div>
+    </div>
+    </div>
+    <div class="container-fluid bg-light" id="case2">
+        <h1 >Total cases</h1>
+        <div class="fl">
+            <div id="act1" class="tot_case"><span><img src="covid.png" alt="sad" width="50px" height="50px"></span><h3><span id="totalcase">0</span></br> Total cases</h3></div>
+            <div id="die1" class="tot_case"><span><img src="sady.png" alt="sad" width="50px" height="50px"></span><h3><span id="totdeath">0</span></br>Death Case</h3></div>
+            <div id="rec1" class="tot_case"><span><img src="smiley.png" alt="sad" width="50px" height="50px"></span><h3><span id="totalrecovered">0</span></br> Recovered</h3></div>
+            <div id="temp1" class="tot_case"><span><img src="temp.png" alt="sad" width="50px" height="50px"></span><h3><span id="totalinfected">0</span></br> Active Cases</h3></div>
+        </div>
+    </div>
+    <div class="container-fluid bg-light" id="map">
+        <div class="ly">
+            <div id="lab1">
+        <img src="MapOfNepal.png" usemap="#image-map" id="img1">
+
+<map name="image-map">
+<area target="_self" alt="Province1" title="Province1&#10;37,983 cases" href="" coords="581,370,589,364,591,373,599,379,608,379,614,383,621,376,629,376,635,381,643,376,651,373,659,372,662,377,670,381,674,373,678,365,682,353,682,341,679,330,675,321,668,315,668,303,668,290,670,282,671,272,673,259,678,251,681,242,673,238,664,237,644,238,640,247,630,245,620,243,609,245,596,247,586,239,578,236,569,230,561,228,557,220,550,224,541,230,537,237,544,239,546,247,544,256,537,264,531,274,526,280,517,290,520,296,520,303,530,308,529,320,529,328,522,331,535,334,542,334,548,337,552,344,557,352,569,353,581,350,581,359" shape="poly">
+<area target="_self" alt="Province2" title="Province2&#10;22,361 cases" href="" coords="581,352,572,352,579,350,561,351,581,352,578,368,576,376,568,377,555,374,543,368,531,363,522,361,513,360,503,357,490,364,480,356,476,343,467,341,456,344,449,350,433,347,433,339,419,341,411,329,401,326,388,321,390,311,386,298,375,294,382,287,390,289,399,286,403,291,412,291,420,293,426,296,429,302,438,306,447,308,454,311,461,315,471,312,477,309,485,312,493,313,498,320,506,324,516,328,522,333,530,334,542,335,554,346" shape="poly">
+<area target="_self" alt="Province3" title="Bagmati&#10;174k cases" href="" coords="540,238,543,247,543,254,534,265,528,275,520,286,516,293,518,304,527,306,529,314,527,323,521,330,510,323,498,318,490,313,480,310,463,314,453,310,442,306,429,300,420,292,410,289,402,288,393,284,384,284,376,288,367,291,359,289,348,282,337,284,330,286,331,278,340,276,348,273,355,266,363,265,370,261,372,252,383,248,392,253,398,251,396,240,402,234,403,226,413,222,415,213,424,201,435,206,444,208,453,204,462,205,466,210,473,200,477,209,481,216,486,221,489,230,494,234,498,240,505,241,506,232,507,222,515,219,515,227,518,234,528,239" shape="poly">
+<area target="_self" alt="Province4" title="Gandaki&#10;17,916 cases" href="" coords="308,125,317,118,324,114,332,113,339,114,347,118,354,125,352,131,355,140,356,151,367,153,370,161,380,166,389,167,395,176,404,179,416,182,421,173,429,173,434,179,430,189,427,199,418,206,413,219,405,224,403,234,395,241,396,249,386,246,374,248,370,256,361,262,352,266,346,271,334,276,330,284,328,292,316,289,308,287,303,274,310,267,317,259,327,259,334,256,328,246,314,245,303,243,292,239,305,235,298,226,288,222,279,215,270,210,258,205,250,199,249,189,254,178,267,174,268,166,277,169,290,165,296,156,302,147,307,131" shape="poly">
+<area target="_self" alt="Province5" title="Lumbini&#10;5,60,000 cases" href="" coords="307,285,303,274,312,262,322,259,333,255,325,244,306,241,293,240,300,232,294,222,285,218,280,209,268,211,258,205,249,198,247,185,254,182,265,175,268,166,255,161,242,158,234,161,230,170,227,176,219,182,208,189,205,196,206,204,206,211,198,214,186,211,177,214,172,219,158,207,146,196,131,182,118,172,98,193,107,198,111,206,118,213,119,220,127,218,128,226,137,229,145,232,154,240,163,246,175,239,179,245,186,249,197,254,208,262,228,261,236,272,234,281,243,281,251,283,263,285,271,288,278,294,285,292,289,284" shape="poly">
+<area target="_self" alt="Province6" title="Karnali&#10;7,359 cases" href="" coords="121,42,123,32,130,23,131,12,137,15,144,9,153,12,163,14,175,18,183,16,187,27,191,36,196,45,206,47,218,54,226,60,235,68,239,76,250,80,259,84,267,86,276,90,280,99,290,108,297,120,303,125,306,136,299,149,289,160,277,164,264,164,245,156,232,162,227,173,215,186,205,190,204,200,205,209,204,216,193,211,183,209,175,215,162,211,146,194,126,180,117,171,110,159,110,151,93,145,102,145,119,151,128,150,134,164,140,167,139,154,128,141,132,134,140,132,135,119,139,111,149,111,156,106,159,95,153,84,152,73,153,66,158,59,152,55,141,53,132,58,132,47" shape="poly">
+<area target="_self" alt="Province7" title="Sudur Paschim&#10;15,953 cases" href="" coords="97,195,115,171,111,152,101,152,93,143,101,143,119,150,126,149,137,165,134,149,130,132,139,128,135,117,143,108,153,107,157,94,153,82,152,67,157,58,144,55,134,58,130,46,118,45,108,46,101,37,96,28,86,27,82,36,74,44,62,50,58,58,53,64,43,71,44,80,41,88,32,101,39,110,35,116,32,125,25,125,22,132,14,146,22,154,32,163,40,172,52,178,56,165,61,173,67,176,75,184,82,187" shape="poly">
+</map>
+</div>
+<div id="lab2">
+    <h2>Highlights</h2>
+    <div class="one" id="news1">
+        <a
+            href="https://kathmandupost.com/health/2021/11/27/nepal-reports-197-new-covid-19-cases-three-deaths?fbclid=IwAR3Ph4mWWPNQ7OV0qlq4ejalO1k9Zc2NdWDZK2y7sH-gNWSy1duN-XRZheA">
+            <img src="https://assets-api.kathmandupost.com/thumb.php?src=https://assets-cdn.kathmandupost.com/uploads/source/news/2021/entertainment/thumb31609843164-1610966853.jpg"><br> Nepal reports 197 new Covid-19 cases, three deaths</a>
+    </div>
+        <div class="one" id="news2">
+            <a
+            href="https://kathmandupost.com/health/2021/11/28/as-countries-impose-restrictions-amid-omicron-concerns-nepali-officials-say-they-are-analysing-the-situation?fbclid=IwAR2-8shiSc0kM66UxiOtfrn7crPHWQFBDedlXpjusI6zuT78RooARcKLbhk">
+            <img src="https://assets-api.kathmandupost.com/thumb.php?src=https://assets-cdn.kathmandupost.com/uploads/source/news/2021/third-party/cvouna-1638063079.jpg"><br> As countries impose restrictions amid Omicron concerns, Nepali officials say they are analysing the situation
+            </a>
+        </div>
+        <div class="one" id="news3">
+            <a
+            href="https://kathmandupost.com/health/2021/11/24/nepal-reports-305-new-covid-19-cases-four-deaths">
+            <img src="https://assets-api.kathmandupost.com/thumb.php?src=https://assets-cdn.kathmandupost.com/uploads/source/news/2021/entertainment/thumb4-1610966853.jpg"><br> NEPAL COVID-19 UPDATE: Nepal records 305 fresh COVID-19 cases and 4 death on
+            thursday</a>
+        </div>
+        <div class="one" id="news4">
+            <a
+            href="https://kathmandupost.com/health/2021/11/25/health-ministry-doesn-t-know-about-people-who-missed-second-doses">
+            <img src="https://assets-api.kathmandupost.com/thumb.php?src=https://assets-cdn.kathmandupost.com/uploads/source/news/2021/health/2591301746019218375237246752883092806181983n-1637782485.jpg"><br> Health Ministry doesn’t know about people who missed second doses</a>
+    </div>
+</div>
+</div>
+    </div>
+    <div class="container-fluid bg-light about-section" id="contact">
+        <h3 class="grid-item">What is corona virus?</h3>
+        <div class="description">
+        <img src="virus.png" alt="virus" width="300px" height="300px">
+        <p class="corona_para">Coronaviruses are a family of viruses known for containing strains that cause potentially deadly diseases in mammals and birds.
+
+            In humans they're typically spread via airborne droplets of fluid produced by infected individuals.
+            
+            Of the seven coronaviruses kown to infect humans, four spread with seasonal regularity, causing anything from mild cold-like symptoms to flu-like discomforts.    
+            
+            A few more notable strains, including SARS-CoV-2 (responsible for COVID-19), and those responsible for severe acute respiratory syndrome (SARS) and Middle East respiratory syndrome (MERS), can cause death in humans. The cause of death is complex, though is typically the result of heightened immune responses causing damage in multiple systems throughout the body.</p>
+        </div>
+
+        <h2 id="h2">The Symptoms of Covid-19</h2>
+        <div class="symptom">
+            <div class="symptom1 symptoms">
+                <img src="feverandchills.jpg" class="img" alt="images"><p class="p">Fever and Chills <br><br>ज्वरो वा चिसो</p>
+            </div>
+            <div class="symptom2 symptoms">
+                <img src="cough.jpg" class="img" alt="images"><p class="p">Cough <br><br>खोकी</p>
+            </div>
+            <div class="symptom3 symptoms">
+                <img src="Congestionorrunnynose.jpg" class="img" alt="image"><p class="p">Congestion or runny nose <br><br>भीड वा नाक बग्ने</p>
+            </div>
+            <div class="symptom4 symptoms">
+                <img src="shortnessofbreath.jpg" class="img" alt="image"><p class="p">Shortness of breath or difficulty breathing <br><br>सास फेर्न गार्हो हुनु</p>
+            </div>
+            <div class="symptom5 symptoms">
+                <img src="fatigue.jpg" class="img" alt="image"><p class="p">Fatigue <br><br>थकान</p>
+            </div>
+            <div class="symptom6 symptoms">
+                <img src="Muscleorbodyaches.jpg" class="img" alt="image"><p class="p">Muscle or body aches <br><br>मान्सपेसी वा शरीर दुखाइ</p>
+            </div>
+            <div class="symptom7 symptoms">
+                <img src="Headache.jpg" class="img" alt="image"><p class="p">Headache <br><br>टाउको दुख्ने </p>
+            </div>
+            <div class="symptom8 symptoms">
+                <img src="Newlossoftasteorsmell.jpg" class="img" alt="image"><p class="p">New loss of taste or smell <br><br>स्वाद वा गन्धको नयाँ हानि</p>
+            </div>
+            <div class="symptom9 symptoms">
+                <img src="Sore throat.jpg" class="img" alt="image"><p class="p">Sore throat <br><br>दुखेको घाँटी</p>
+            </div>
+            <div class="symptom10 symptoms">
+                <img src="Nauseaorvomiting.jpg" class="img" alt="image"><p class="p">Nausea or vomiting <br><br>वाकवाकी वा उल्टी</p>
+            </div>
+            <div class="symptom11 symptoms">
+                <img src="Diarrhea.png" class="img" alt="image"><p class="p">Diarrhea <br><br>पखाला</p>
+            </div>
+        </div>
+        <h2 id="h2">The Preventing Measures of Covid-19</h2>
+        <div class="symptom">
+            <div class="symptom1 symptoms">
+                <img src="mask.jpg" class="img" alt="images">
+                <p class="p">Wear a face mask, as advised by the CDC</p>
+            </div>
+            <div class="symptom2 symptoms">
+                <img src="distance.jpg" class="img" alt="images">
+                <p class="p">Maintain at least six feet of distance between yourself and others. </p> 
+            </div>
+            <div class="symptom3 symptoms">
+                <img src="gathering.jpg" class="img" alt="image">
+                <p class="p">Avoid large gatherings and Socialize outdoors. </p>
+            </div>
+            <div class="symptom4 symptoms">
+                <img src="sanitizer.jpg" class="img" alt="image">
+                <p class="p">Use sanitizer.</p>
+            </div>
+            <div class="symptom5 symptoms">
+                <img src="vaccine.jpg" class="img" alt="image">
+                <p class="p">Get vaccinated as soon as you are eligible.</p>
+            </div>
+            <div class="symptom6 symptoms">
+                <img src="sick.jpg" class="img" alt="image">
+                <p class="p">Avoid close contact with people who are sick.</p>
+            </div>
+            <div class="symptom7 symptoms">
+                <img src="touch.jpg" class="img" alt="image">
+                <p class="p">Minimize touching your eyes, nose, and mouth. </p>
+            </div>
+            <div class="symptom8 symptoms">
+                <img src="sick_bed.jpg" class="img" alt="image">
+                <p class="p"></p>Stay home when you are sick.</p>
+            </div>
+            <div class="symptom9 symptoms">
+                <img src="cover.jpg" class="img" alt="image">
+                <p class="p">Cover your cough or sneeze with a tissue, then throw the tissue in the trash. </p>
+            </div>
+            <div class="symptom10 symptoms">
+                <img src="clean.jpg" class="img" alt="image">
+                <p class="p">Clean frequently touched objects and surfaces regularly. </p>
+            </div>
+            <div class="symptom11 symptoms">
+                <img src="wash.jpg" class="img" alt="image">
+                <p class="p">Wash your hands often with soap and water. </p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-primary" id="chatey">
+        <div class="fixed-bottom"> <img src="msngrr.png" class="rounded-circle" alt="img" width="70px" height="70px" id="imgms">
+        
+        <img src="msngrr.png" class="rounded-circle" alt="img" width="50px" height="50px" id="img">
+        <div class="cover">
+        <section id="head">
+            <img src="msngrr.png" class="rounded-circle" alt="img" width="50px" height="50px">
+            &nbsp;
+            <strong>covidupdate</strong>
+            <span >
+                <i class="far fa-eye-slash" id="eye"></i>
+            </span>
+        </section>
+        <div id="message">
+            <div class="robot">
+                Hi ,
+                How Can I help you?</br>
+            </div>
+            
+            <div class="foot">
+
+                <input id="user" type="text" name="key" placeholder="Type your message.." >
+                <button type="reset" onclick="talk()" style="background:#004C99;border:none;outline:none;"><i class="fas fa-paper-plane" style="color:white;background:#004C99;"></i></button>
+            </div>
+            
+        </div>
+        </div>
+
+        <div class="container-fluid bg-dark " id="footer">
+            <h3>© BCA 3<sup>rd</sup>sem</h3>
+        </div>
+</div>
+</div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+        <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+        integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI="
+        crossorigin="anonymous"
+      ></script>
+      <script src="countries.js"></script>
+      <script src="app.js"></script>
+      <script type="text/javascript"> 
+     let n1= document.getElementById('totalcase');
+     let n2= document.getElementById('totdeath');
+     let n3= document.getElementById('totalinfected');
+     let n4= document.getElementById('totalrecovered');
+     let total_cases_elementa = document.getElementById("totalvalue");
+     let recovered_elementa = document.getElementById("recval");
+     let deaths_elementa = document.querySelector("#totaldeath");
+     let n8 = document.getElementById("newcases");
+     let n9 = document.getElementById("newdeaths");
+     let n10 = document.getElementById("newrec");
+     let n11 = document.getElementById("dailycase");
+     let n12 = document.getElementById("dailyrecovered");
+     let n13 = document.getElementById("dailydeath")
+
+     let logo=document.getElementById('img');
+	let eye=document.getElementById('eye');
+ let main=document.querySelector('.cover');
+ let foot=document.getElementById('footer');
+ logo.addEventListener('click',()=>{
+main.style.display="block";
+logo.style.display="none";
+foot.style.display="none";
+ });
+eye.addEventListener('click',()=>{
+main.style.display="none";
+logo.style.display="block";
+foot.style.display="flex";
+ });
+
+let auser=document.getElementById("user");
+	user.addEventListener('keyup',e=>{
+if(e.key == "Enter" && user.value!=""){
+	talk();
+}
+});
+
+	
+	function talk(){
+	 let user=document.getElementById("user");
+    let val=user.value;
+    let msgsec=document.getElementById("message");
+     let msg = document.createElement('div');
+     msg.classList.add("person");
+     //let textnode = document.createTextNode(val);
+     msg.innerHTML=val;      
+    //msg.appendChild(textnode);
+    msgsec.appendChild(msg);
+    if(user.value!=""){
+    	 setTimeout(
+    		function(){
+    			let rep1=document.createElement('div');
+    	 rep1.classList.add("robot");
+    	 rep1.innerHTML="got your message."+"</br>"+" we will contact you asap";
+    	  document.getElementById("message").appendChild(rep1);
+    	},900);
+    	
+    	
+    }
+      
+    
+    
+     user.value=' ';
+    }
+          let api='https://corona.lmao.ninja/v2/countries/Nepal';
+          fetch(api).then(response=>response.json()).then(result=>res(result));
+          function res(update){
+              let totalinfecteddata=update.active;
+              n3.innerHTML=totalinfecteddata;
+              let totalinfecteddatab= update.cases;
+            //   total_cases_elementa.innerHTML=totalinfecteddatab;
+              let totaldeathdata=update.deaths;
+              n2.innerHTML=totaldeathdata;
+              //recovered_elementa.innerHTML=totaldeathdata;
+              let totalrecovereddata=update.recovered;
+              n4.innerHTML=totalrecovereddata;
+            //   deaths_elementa.innerHTML=totalrecovereddata;
+              let totalcasedata=update.cases;
+              n1.innerHTML=totalcasedata;
+            //   let dailycases =update.todayCases;
+            // n11.innerHTML = update.todayCases;
+            // let newDeath = update.todayDeaths;
+            // n12.innerHTML = newDeath;
+            // let newRec = update.todayRecovered;
+            // n13.innerHTML = newRec;
+            
+              console.log(update, n8, n9, n10, update.todayCases, update.todayDeaths, update.todayRecovered);
+              
+          };
+ </script>
+
+
+
+
+
+<!-- <script>
+    alert("Screen Width: "+screen.width+"\nScreen Height: "+screen.height)
+</script> -->
+</body>
+
+</html>     
