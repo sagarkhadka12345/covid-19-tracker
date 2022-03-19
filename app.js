@@ -140,12 +140,12 @@ function updateStats() {
   country_name_element.innerHTML = user_country;
   total_cases_element.innerHTML = total_cases;
   new_cases_element.innerHTML = `+${new_confirmed_cases}`;
-  n5.innerHTML = "+197";
+  n5.innerHTML = "+12";
   //recovered_element.innerHTML = new_total_recovered  ;
-  n7.innerHTML = "+325";
+  n7.innerHTML = "+392";
   deaths_element.innerHTML = total_deaths;
   new_deaths_element.innerHTML = `+${new_deaths_cases}`;
-  n6.innerHTML = "+3";
+  n6.innerHTML = "+0";
 
   // format dates
   dates.forEach((date) => {
