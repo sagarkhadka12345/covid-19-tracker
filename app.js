@@ -224,7 +224,7 @@ fetch("https://google-news.p.rapidapi.com/v1/top_headlines?lang=en&country=US", 
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "google-news.p.rapidapi.com",
-		"x-rapidapi-key": "5383fa6653mshe48350ffe07fa8fp13927ejsn7dffbd9cf2fb"
+		"x-rapidapi-key": ""
 	}
 })
 .then(response => {
